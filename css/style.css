@@ -1,6 +1,10 @@
-/****** General ***********/
+/* Import des Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+
 * {
     font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -9,14 +13,93 @@
     --filter-bg-color: #DEEBFF;
 }
 
-.fa-solid {
-    color: var(--main-color);
-}
-
 body {
+    min-width: 1025px;
+    max-width: 1440px;
     display: flex;
     justify-content: center;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+.logo {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    height: 19px;
+}
+
+img#logo {
+    height: 19px;
+}
+
+/*-------------------------------------------- Menu - Navigation --------------------------*/
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 68px;
+    /* Espace entre les éléments du menu */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: var(--main-color);
+}
+
+/* Placement du filet au dessus du menu actif */
+nav ul li a::before {
+    content: '';
+    /* création d'un pseudo élément vide*/
+    display: flex;
+
+    /* ces propriétés materialisent et rendent visible l'élément pseudo bien qu'il soit vide" */
+    width: 0;
+    /* largeur initiale de l'élément */
+    height: 2px;
+    /* Graisse du filet */
+    background: var(--main-color);
+    /*---------------------- Fin matérialisation pseudo vide ------------------*/
+    position: absolute;
+    top: -20px;
+    /* position verticale du filet au desuus de l'élément parent */
+    left: 0;
+    transition: width .0s;
+    /* Transition à l'affichage de la propriété width " */
+}
+
+nav ul li a:hover::before,
+nav ul li a:focus::before {
+    width: 100%;
+    /* Largeur du filet à 100% de l'élément parent lorsque le menu est actif */
+}
+
+/*-------------------------------------------- Fin menu navigation ---------------------------------------*/
 
 .main-container {
     width: 100%;
@@ -25,15 +108,185 @@ body {
     box-sizing: border-box;
 }
 
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
-.section-title {
-    margin: 0;
+.section-title h1 {
+    margin-bottom: 6px;
     font-size: 22px;
 }
+
+.section-title p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/*--------------------------------------------- Bloc Recherche -----------------------------------------------------*/
+.bloc_recherche {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1340px;
+    height: 281px;
+}
+
+.section-recherche {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 377px;
+    height: 49px;
+    border: var(--main-bg-color);
+    border-style: solid;
+    border-radius: 50px;
+}
+
+.section-filtres {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 758px;
+    height: 50px;
+}
+
+.section-info {
+    width: 1340px;
+    height: 24px;
+}
+
+form {
+    display: flex;
+    margin-top: 0;
+}
+
+.fa-location-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.fa-star {
+    color: var(--main-color);
+}
+
+.fa-location-dot {
+    font-size: 18px;
+    /* taille 18px ???? */
+    background-color: var(--main-bg-color);
+    width: 50px;
+    height: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+input {
+    width: 195px;
+    border: 1px solid #F2F2F2;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    outline: none;
+    /* supression contour */
+    text-align: center;
+}
+
+.bouton_rechercher_desktop_tablette {
+    background-color: var(--main-color);
+    width: 132px;
+    height: 53px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border-style: none;
+    color: var(--main-bg-color);
+}
+
+#titre-filtres {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.bouton_filtre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 45px;
+    border-color: var(--main-bg-color);
+    border-style: solid;
+    border-width: 2px;
+    height: 100%;
+    padding: 0px 20px 0px 20px;
+    background-color: white;
+}
+
+.bouton_filtre:hover {
+    background-color: var(--filter-bg-color);
+}
+
+.fa-money-bill-wave {
+    font-size: 17px;
+    color: var(--main-color);
+    margin-right: 8px;
+}
+
+.fa-person {
+    font-size: 22px;
+    color: var(--main-color);
+    margin-right: 8px;
+}
+
+.fa-heart {
+    font-size: 22px;
+    color: var(--main-color);
+    margin-right: 8px;
+}
+
+.fa-fire {
+    font-size: 22px;
+    color: var(--main-color);
+    margin-right: 5px;
+}
+
+.section-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.section-info p {
+    margin-left: 8px;
+}
+
+.fa-info {
+    font-size: 10px;
+    color: var(--main-color);
+}
+
+.fa-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    width: 24px;
+    height: 24px;
+    border: var(--main-bg-color);
+    border-style: solid;
+    border-width: 2px;
+}
+
+/*--------------------------------------- Fin bloc recherche ------------------------------------*/
 
 .card {
     background-color: white;
@@ -48,6 +301,7 @@ a {
 
 .card-title {
     font-size: 16px;
+    font-weight: bold;
 }
 
 .euro {
@@ -58,7 +312,7 @@ a {
     color: var(--main-bg-color)
 }
 
-/****** Hebergements And Populaires ***********/
+/*---------------------------------------- Hebergements And Populaires ---------------------------------*/
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
@@ -71,12 +325,73 @@ a {
     box-sizing: border-box;
 }
 
-/****** Hebergements ***********/
+/*------------------------------------------------ Hebergements -----------------------------------------*/
 .hebergements {
     width: 65%;
 }
 
-/****** Populaires ***********/
+.hebergements-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 33px;
+}
+
+.hebergements-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.hebergements-cards .card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hebergements-cards img {
+    width: 100%;
+    height: 124px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.hebergements-card img {
+    width: 100%;
+    height: 124px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.hebergements-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.hebergements-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+}
+
+.hebergements-card .card-subtitle {
+    margin: 0;
+}
+
+.hebergements-card .card-rating {
+    margin-bottom: 5px;
+}
+
+.afficher-plus {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*-------------------------------------------------- Populaires --------------------------------------------*/
 .populaires {
     width: 32%;
 }
@@ -99,7 +414,23 @@ a {
     border-bottom-left-radius: 20px;
 }
 
+.populaires-card img {
+    width: 100%;
+    height: 124px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 .populaires-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.populaires-card .card-content {
     width: 67%;
     padding-left: 15px;
     display: flex;
@@ -113,7 +444,16 @@ a {
     margin-bottom: 4px;
 }
 
+.populaires-card .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
 .populaires-cards .card-subtitle {
+    margin: 0;
+}
+
+.populaires-card .card-subtitle {
     margin: 0;
 }
 
@@ -121,7 +461,71 @@ a {
     margin-bottom: 5px;
 }
 
+.populaires-card .card-rating {
+    margin-bottom: 5px;
+}
 
+
+/*---------------------------------------------- Activités à Marseille  --------------------------------------------*/
+.section-activites {
+    width: 100%;
+    padding: 30px;
+}
+
+.activite-cards img {
+    height: 380px;
+    width: 297px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+}
+
+.activite-cards {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    /* Gouttière de 30px entre les cartes */
+    justify-content: space-between;
+    width: 380px;
+}
+
+.activites-card .card-txt {
+    margin-inline: 19px;
+    margin-block: 20px;
+}
+
+.activites-card {
+    background-color: white;
+    border-radius: 20px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+/*-------------------------------------------------------------- Footer --------------------------------------------------------*/
+footer {
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: row;
+    margin-top: 35px;
+}
+
+.footer-col {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+footer li {
+    list-style-type: none;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
 
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
