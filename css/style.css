@@ -14,18 +14,22 @@
 }
 
 body {
-    min-width: 1025px;
-    max-width: 1440px;
     display: flex;
     justify-content: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
+.main-container {
+    width: 100%;
+    padding: 0 30px;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    background-color: white;
 }
 
 .logo {
@@ -72,41 +76,30 @@ nav ul li a:focus {
     color: var(--main-color);
 }
 
-/* Placement du filet au dessus du menu actif */
+/*----------------------- Placement du filet au dessus du menu actif --------------------------*/
 nav ul li a::before {
-    content: '';
-    /* création d'un pseudo élément vide*/
+    content: ''; /* création d'un pseudo élément vide*/
     display: flex;
-
-    /* ces propriétés materialisent et rendent visible l'élément pseudo bien qu'il soit vide" */
-    width: 0;
-    /* largeur initiale de l'élément */
-    height: 2px;
-    /* Graisse du filet */
+    
+/*----------- ces propriétés materialisent et rendent visible l'élément pseudo bien qu'il soit vide" -------*/ 
+    width: 0; /* largeur initiale de l'élément */
+    height: 2px; /* Graisse du filet */
     background: var(--main-color);
-    /*---------------------- Fin matérialisation pseudo vide ------------------*/
+/*---------------------- Fin matérialisation pseudo vide ------------------*/
+
     position: absolute;
-    top: -20px;
-    /* position verticale du filet au desuus de l'élément parent */
+    top: -20px; /* position verticale du filet au desuus de l'élément parent */
     left: 0;
-    transition: width .0s;
-    /* Transition à l'affichage de la propriété width " */
+    transition: width .0s; /* Transition à l'affichage de la propriété width " */
 }
 
 nav ul li a:hover::before,
 nav ul li a:focus::before {
-    width: 100%;
-    /* Largeur du filet à 100% de l'élément parent lorsque le menu est actif */
+    width: 100%; /* Largeur du filet à 100% de l'élément si menu est actif */
 }
 
 /*-------------------------------------------- Fin menu navigation ---------------------------------------*/
 
-.main-container {
-    width: 100%;
-    max-width: 1440px;
-    padding: 0 50px;
-    box-sizing: border-box;
-}
 
 
 a {
@@ -119,17 +112,22 @@ a {
     font-size: 22px;
 }
 
+
+h2.section-title {
+    font-size: 22px;
+}
+
 .section-title p {
     margin: 0;
     font-size: 16px;
 }
 
 /*--------------------------------------------- Bloc Recherche -----------------------------------------------------*/
-.bloc_recherche {
+.bloc-recherche {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 1340px;
+    width: 100%;
     height: 281px;
 }
 
@@ -155,7 +153,7 @@ a {
 }
 
 .section-info {
-    width: 1340px;
+    width: 100%;
     height: 24px;
 }
 
@@ -164,20 +162,16 @@ form {
     margin-top: 0;
 }
 
-.fa-location-dot {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-}
-
 .fa-star {
     color: var(--main-color);
 }
 
 .fa-location-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
     font-size: 18px;
-    /* taille 18px ???? */
     background-color: var(--main-bg-color);
     width: 50px;
     height: 50px;
@@ -196,7 +190,7 @@ input {
     text-align: center;
 }
 
-.bouton_rechercher_desktop_tablette {
+.bouton-rechercher {
     background-color: var(--main-color);
     width: 132px;
     height: 53px;
@@ -213,7 +207,7 @@ input {
     font-weight: bold;
 }
 
-.bouton_filtre {
+.bouton-filtre {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -228,7 +222,7 @@ input {
     background-color: white;
 }
 
-.bouton_filtre:hover {
+.bouton-filtre:hover {
     background-color: var(--filter-bg-color);
 }
 
@@ -254,6 +248,10 @@ input {
     font-size: 22px;
     color: var(--main-color);
     margin-right: 5px;
+}
+
+.fa-chart-line {
+    color: var(--main-color);
 }
 
 .section-info {
@@ -295,6 +293,8 @@ input {
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
+
+
 .card img {
     object-fit: cover;
 }
@@ -313,6 +313,7 @@ input {
 }
 
 /*---------------------------------------- Hebergements And Populaires ---------------------------------*/
+
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
@@ -320,7 +321,7 @@ input {
 
 .hebergements-and-populaires section {
     background-color: var(--main-bg-color);
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 30px;
     box-sizing: border-box;
 }
@@ -340,13 +341,15 @@ input {
 .hebergements-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-gap: 30px;
 }
+
 
 .hebergements-cards .card {
     width: 100%;
     box-sizing: border-box;
 }
+
 
 .hebergements-cards img {
     width: 100%;
@@ -363,26 +366,19 @@ input {
 }
 
 .hebergements-cards .card-content {
-    width: 67%;
+    width: 100%;
     padding-left: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+    gap: 8px;
 }
 
 .hebergements-cards .card-title {
     margin-top: 10px;
     margin-bottom: 4px;
     white-space: nowrap;
-}
-
-.hebergements-card .card-subtitle {
-    margin: 0;
-}
-
-.hebergements-card .card-rating {
-    margin-bottom: 5px;
 }
 
 .afficher-plus {
@@ -466,40 +462,68 @@ input {
 }
 
 
-/*---------------------------------------------- Activités à Marseille  --------------------------------------------*/
+/*---------------------------------------------- Activités --------------------------------------------*/
 .section-activites {
     width: 100%;
-    padding: 30px;
 }
 
-.activite-cards img {
+.activites-cards .card {
+    width: 23%;
+    box-sizing: border-box;
+    padding: 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: block;
+}
+
+.activites-cards .card img {
     height: 380px;
-    width: 297px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    width: 100%;
     object-fit: cover;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
-.activite-cards {
-    margin-top: 30px;
+.activites-cards {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
-    /* Gouttière de 30px entre les cartes */
-    justify-content: space-between;
-    width: 380px;
-}
-
-.activites-card .card-txt {
-    margin-inline: 19px;
-    margin-block: 20px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
 
 .activites-card {
+    box-sizing: border-box;
+    padding: 0;
     background-color: white;
     border-radius: 20px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    display: block;
 }
+
+.activites-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+}
+
+.activites-cards .card-content {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px 19px;
+}
+
+.activites-card-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+
+
 
 /*-------------------------------------------------------------- Footer --------------------------------------------------------*/
 footer {
@@ -516,9 +540,12 @@ footer {
     padding: 20px;
 }
 
-h3 {
+.h3-footer {
     font-size: 18px;
-    margin-bottom: 15px;
+}
+
+.ul-footer {
+    padding-top: 15px;
 }
 
 footer li {
@@ -529,16 +556,9 @@ footer li {
 
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
-
-/****** Media queries ***********/
-/* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
     .hebergements-and-populaires {
         flex-direction: column;
-    }
-
-    .hebergements {
-        width: 100%;
     }
 
     .populaires {
@@ -563,9 +583,55 @@ footer li {
     .populaires-cards .card-subtitle {
         font-size: 13px;
     }
-}
 
-/* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
-    /* ... */
+
+    .hebergements {
+        width: 100%;
+    }
+
+    .hebergements h2 {
+        margin-bottom: 20px;
+    }
+
+    .hebergements-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+        margin: auto;
+    }
+
+    .hebergements-cards .card-title {
+        font-size: 14px;
+    }
+
+    .hebergements-cards .card-subtitle {
+        font-size: 13px;
+    }
+
+    .hebergements-cards img {
+        width: 100%;
+        height: 200px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .activites-cards .card {
+        width: 23%;
+        box-sizing: border-box;
+        padding: 0;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        display: block;
+    }
+
+
+    .activites-cards .card img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
+
+    /* Small devices (phones, less than 768px) */
 }

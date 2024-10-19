@@ -13,5 +13,6 @@ Tâches:
 - Gérer l'affichage des cards ---> [X]
 - Intégrer le conteneur ---> [X]
 - Implémenter le footer ---> [X]
-- Gérer les tailles limites ---> []
-- Vérifier la qualité du code ---> [X] 
+- Gérer les tailles limites ---> [X]
+- Vérifier la qualité du code ---> [X]
+- Vérifier compatibilité Firefox Chrome ---> [X] 
