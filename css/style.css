@@ -560,7 +560,7 @@ footer li {
 @media screen and (max-width: 1160px) and (min-width: 1026px){
     .hebergements-cards .card-content {
         width: 100%;
-        padding-left: 0px;
+        padding-left: 5px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
